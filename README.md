@@ -1,1 +1,8 @@
-# test_guru
+TestGuru
+
+Entities list:
+
+User;
+Administrator;
+Question;
+Test.
