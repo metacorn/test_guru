@@ -4,4 +4,4 @@ require 'bundler/setup' # Set up gems listed in the Gemfile.
 require 'bootsnap/setup' # Speed up boot time by caching expensive operations.
 require 'execjs'
 
-ExecJS.runtime = ExecJS::Runtimes::Node
+# ExecJS.runtime = ExecJS::Runtimes::Node

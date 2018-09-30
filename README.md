@@ -5,4 +5,6 @@ Entities list:
 User;
 Administrator;
 Question;
-Test.
+Answer;
+Test;
+Passing.
