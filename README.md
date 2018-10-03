@@ -2,9 +2,8 @@ TestGuru
 
 Entities list:
 
-User;
-Administrator;
+Categories;
+Test;
 Question;
 Answer;
-Test;
-Passage.
+User.
