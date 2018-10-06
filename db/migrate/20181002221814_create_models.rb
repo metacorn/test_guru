@@ -14,7 +14,7 @@ class CreateModels < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     create_table :answers do |t|
-      t.text :text
+      t.text :body
       t.boolean :correct
       t.timestamps
     end
