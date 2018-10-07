@@ -19,7 +19,7 @@ class CreateModels < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     create_table :users do |t|
-      t.integer :type
+      t.integer :user_class
       t.string :username
       t.string :password
       t.string :email

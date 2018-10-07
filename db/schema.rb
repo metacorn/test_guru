@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_230748) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "type", null: false
+    t.integer "user_class", null: false
     t.string "username", null: false
     t.string "password", null: false
     t.string "email", null: false
