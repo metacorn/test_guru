@@ -20,6 +20,13 @@ class CreateModels < ActiveRecord::Migration[5.2]
     end
     create_table :users do |t|
       t.integer :type
+      t.string :username
+      t.string :password
+      t.string :email
+      t.timestamps
+    end
+    create_table :passing_tests do |t|
+      t.boolean :passed, null: false, default: false
       t.timestamps
     end
   end

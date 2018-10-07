@@ -10,5 +10,8 @@ class AddValuesNullConstraint < ActiveRecord::Migration[5.2]
     change_column_null(:answers, :correct, false)
     change_column_null(:answers, :question_id, false)
     change_column_null(:users, :type, false)
+    change_column_null(:users, :username, false)
+    change_column_null(:users, :password, false)
+    change_column_null(:users, :email, false)
   end
 end
