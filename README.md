@@ -4,7 +4,7 @@ Entities list:
 
 Category;
 Test;
-PassingTest
+PassingTest;
 Question;
 Answer;
 User.
