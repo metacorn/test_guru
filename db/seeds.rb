@@ -13,13 +13,11 @@ def create_categories(*categories)
   end
 end
 # Method to create tests. 'level' is optional parameter, containing (if it passes) non-default level of test. When 'level' does not pass it means that test has default level (0, 'beginner'). See create_test method callings below.
-def create_test(title, category, *level)
+def create_test(title, category, level=0)
   category_id = Category.find_by(title: category).id
-  test = Test.create(title: title, category_id: category_id)
-  if level.present?
-    test.level = level[0]
-    test.save
-  end
+  test = Test.new(title: title, category_id: category_id)
+  test.level = level
+  test.save
 end
 # Method to create questions and answers.
 def create_question_and_answers(test_title, question_body, *answers_bodies, correct_answer_number)
@@ -29,8 +27,8 @@ def create_question_and_answers(test_title, question_body, *answers_bodies, corr
     answer = Answer.new(body: answer_body, question_id: question.id)
     if index == correct_answer_number - 1
       answer.correct = true
-      answer.save
     end
+    answer.save
   end
 end
 # Tests categories seeding.
