@@ -1,6 +1,7 @@
 class Test < ApplicationRecord
   alias_attribute :test_title, :title
 
+  belongs_to :user
   belongs_to :category
 
   def self.ordered_tests_titles_by_category(category_title)
