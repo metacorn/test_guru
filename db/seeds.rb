@@ -7,10 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users seeding.
-User.create(user_class: 1, username: 'administrator', password: 'no_figure_out', email: 'administrator@gmail.com')
-User.create(user_class: 0, username: 'first_nurd', password: 'strong_pass', email: 'first_nurd@gmail.com')
-User.create(user_class: 0, username: 'second_nurd', password: 'more_strong_pass', email: 'second_nurd@gmail.com')
-User.create(user_class: 0, username: 'third_nurd', password: 'most_strong_pass', email: 'third_nurd@gmail.com')
+users = User.create!([
+  { user_class: 1, username: 'administrator', password: 'no_figure_out', email: 'administrator@gmail.com' },
+  { user_class: 0, username: 'first_nurd', password: 'strong_pass', email: 'first_nurd@gmail.com' },
+  { user_class: 0, username: 'second_nurd', password: 'more_strong_pass', email: 'second_nurd@gmail.com' },
+  { user_class: 0, username: 'third_nurd', password: 'most_strong_pass', email: 'third_nurd@gmail.com' }
+])
 # Creating all categories
 categories = Category.create!([
   { title: 'History' },
@@ -19,12 +21,12 @@ categories = Category.create!([
 ])
 # Creating all tests
 tests = Test.create!([
-  { title: 'Kievan Rus', category: categories[0], author_id: 2 },
-  { title: 'Middle Ages', category: categories[0], author_id: 3, level: 1 },
-  { title: 'Oscar Award', category: categories[1], author_id: 4, level: 2 },
-  { title: 'International Cinema', category: categories[1], author_id: 2, level: 2 },
-  { title: 'World Cup', category: categories[2], author_id: 3 },
-  { title: 'Supporters', category: categories[2], author_id: 4, level: 1 }
+  { title: 'Kievan Rus', category: categories[0], author: users[1] },
+  { title: 'Middle Ages', category: categories[0], author: users[2], level: 1 },
+  { title: 'Oscar Award', category: categories[1], author: users[3], level: 2 },
+  { title: 'International Cinema', category: categories[1], author: users[1], level: 2 },
+  { title: 'World Cup', category: categories[2], author: users[2] },
+  { title: 'Supporters', category: categories[2], author: users[3], level: 1 }
 ])
 # Creating questions for test with id 1
 questions = Question.create!([
