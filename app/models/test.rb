@@ -3,6 +3,7 @@ class Test < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
+  has_many :questions
 
   def self.ordered_tests_titles_by_category(category_title)
     joins(:category).where(categories: { title: category_title }).order(title: :desc).pluck(:title)
