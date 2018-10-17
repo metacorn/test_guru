@@ -8,9 +8,9 @@ class Test < ApplicationRecord
   has_many :passing_tests
   has_many :users, through: :passing_tests
 
-  scope :easy, -> { where(level: 0..1) }
-  scope :medium, -> { where(level: 2..4) }
-  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :easy, -> { by_level(0..1) }
+  scope :medium, -> { by_level(2..4) }
+  scope :hard, -> { by_level(5..Float::INFINITY) }
   scope :by_category, -> (category) { joins(:category).where(categories: { title: category }) }
   scope :by_level, -> (level) { where(level: level) }
 
