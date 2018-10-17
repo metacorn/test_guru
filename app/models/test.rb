@@ -14,6 +14,8 @@ class Test < ApplicationRecord
   scope :by_category, -> (category) { joins(:category).where(categories: { title: category }) }
   scope :by_level, -> (level) { where(level: level) }
 
+  validates :title, presence: true
+
   def self.ordered_tests_titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
   end
