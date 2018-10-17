@@ -15,6 +15,7 @@ class Test < ApplicationRecord
   scope :by_level, -> (level) { where(level: level) }
 
   validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0}
 
   def self.ordered_tests_titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
