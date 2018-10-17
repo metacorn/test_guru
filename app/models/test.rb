@@ -1,8 +1,8 @@
 class Test < ApplicationRecord
   alias_attribute :test_title, :title
-  alias_attribute :author_id, :user_id
+  #alias_attribute :author_id, :user_id
 
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   belongs_to :category
   has_many :questions
   has_many :passing_tests
