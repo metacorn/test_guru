@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_123527) do
+ActiveRecord::Schema.define(version: 2018_10_17_145545) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2018_10_12_123527) do
     t.boolean "passed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "test_id"
+    t.integer "user_id", null: false
+    t.integer "test_id", null: false
     t.index ["test_id"], name: "index_passing_tests_on_test_id"
     t.index ["user_id"], name: "index_passing_tests_on_user_id"
   end
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_10_12_123527) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
