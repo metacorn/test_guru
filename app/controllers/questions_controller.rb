@@ -11,6 +11,17 @@ class QuestionsController < ApplicationController
     render plain: @question.body
   end
 
+  def new
+  end
+
+  def create
+    if Question.create(question_params)
+      render plain: "Question was created!"
+    else
+      render plain: "Question was not created!"
+    end
+  end
+
   private
 
   def get_test
@@ -19,5 +30,9 @@ class QuestionsController < ApplicationController
 
   def get_question
     @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:body)
   end
 end
