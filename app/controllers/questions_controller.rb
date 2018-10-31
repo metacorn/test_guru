@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :get_test, only: %i[index]
-  before_action :get_question, only: %i[show]
+  before_action :get_question, only: %i[show destroy]
 
   def index
     questions = @test.questions.pluck(:body)
@@ -20,6 +20,11 @@ class QuestionsController < ApplicationController
     else
       render plain: "Question was not created!"
     end
+  end
+
+  def destroy
+    @question.destroy
+    render plain: "Question was deleted!"
   end
 
   private
