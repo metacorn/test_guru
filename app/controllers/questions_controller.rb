@@ -17,7 +17,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if Question.create(question_params)
+    question = @test.questions.new(question_params)
+    if question.save
       render plain: "Question was created!"
     else
       render plain: "Question was not created!"
