@@ -5,8 +5,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    questions = @test.questions.pluck(:body)
-    render plain: questions.join("\n")
+    redirect_to test_url(@test)
   end
 
   def show
