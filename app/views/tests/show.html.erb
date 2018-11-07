@@ -1,4 +1,4 @@
 <h4>Test:</h4>
 <%= @test.title %>
 <h4>Questions:</h4>
-<%= render @questions %>
+<%= render partial: "question", collection: @questions %>
