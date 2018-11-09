@@ -1,0 +1,5 @@
+<%= form_with model: [@test, @question], local: true do |form| %>
+<%= form.label "Question:" %><br>
+<%= form.text_field :body, id: :question_Question %><br>
+<%= form.submit "Create question!" %>
+<% end %>
