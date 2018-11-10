@@ -2,3 +2,4 @@
 <%= @question.body %>
 <h4>Answers:</h4>
 <%= render partial: "answer", collection: @answers %>
+<%= link_to 'Back', test_url(@question.test) %>

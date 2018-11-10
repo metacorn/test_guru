@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render plain: "Question was deleted!"
+    redirect_to test_url(@test)
   end
 
   private
