@@ -16,6 +16,9 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def edit
+  end
+
   def create
     question = @test.questions.new(question_params)
     if question.save
