@@ -9,6 +9,19 @@ class TestsController < ApplicationController
   def show
   end
 
+  def new
+    @test = Test.new
+  end
+
+  def create
+    @test = Test.new(test_params)
+    if @test.save
+      redirect_to @test
+    else
+      render :new
+    end
+  end
+
   private
 
   def get_test
@@ -17,5 +30,9 @@ class TestsController < ApplicationController
 
   def get_questions
     @questions = @test.questions
+  end
+
+  def test_params
+    params.require(:test).permit(:title, :level)
   end
 end
