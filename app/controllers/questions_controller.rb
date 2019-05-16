@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :get_test, only: %i[index]
+  before_action :get_test, only: %i[index new]
   before_action :get_question, only: %i[show destroy]
   before_action :get_questions, only: %i[index]
 
@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @question = Question.new
   end
 
   def create
