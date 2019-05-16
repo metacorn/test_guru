@@ -2,4 +2,10 @@
 
 <table>
 <%= render @questions %>
-<table>
+</table>
+<p>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+</p>
+<p>
+  <%= link_to 'Back to tests', tests_path %>
+</p>
