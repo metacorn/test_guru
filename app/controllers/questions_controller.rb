@@ -1,16 +1,14 @@
 class QuestionsController < ApplicationController
   before_action :get_test, only: %i[index]
   before_action :get_question, only: %i[show destroy]
+  before_action :get_questions, only: %i[index]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    questions = @test.questions.pluck(:body)
-    render plain: questions.join("\n")
   end
 
   def show
-    render plain: @question.body
   end
 
   def new
@@ -38,6 +36,10 @@ class QuestionsController < ApplicationController
 
   def get_question
     @question = Question.find(params[:id])
+  end
+
+  def get_questions
+    @questions = @test.questions
   end
 
   def question_params
