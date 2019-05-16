@@ -27,6 +27,10 @@ class QuestionsController < ApplicationController
     @test = @question.test
   end
 
+  def update
+
+  end
+
   def destroy
     @question.destroy
     redirect_to @question.test
@@ -43,7 +47,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, :test_id)
   end
 
   # def rescue_with_question_not_found
