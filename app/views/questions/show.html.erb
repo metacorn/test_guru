@@ -1,3 +1,6 @@
+<h3>
+  Question of <%= @question.test.title %> (level <%= @question.test.level %>) test:
+</h3>
 <%= @question.body %>
 <br>
 <%= link_to 'Back to test', test_path(@question.test) %>
