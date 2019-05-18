@@ -2,5 +2,12 @@
   Question of <%= @question.test.title %> (level <%= @question.test.level %>) test:
 </h3>
 <%= @question.body %>
+<h4>
+  Answers:
+</h4>
+<ol>
+  <%= render @question.answers %>
+</ol>
+<%= link_to 'New answer', new_question_answer_path(@question) %>
 <br>
 <%= link_to 'Back to test', test_path(@question.test) %>
