@@ -5,8 +5,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   belongs_to :category
   has_many :questions
-  has_many :passing_tests
-  has_many :users, through: :passing_tests
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   scope :easy, -> { by_level(0..1) }
   scope :medium, -> { by_level(2..4) }
