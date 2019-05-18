@@ -57,7 +57,7 @@ answers = Answer.create!([
 # Creating questions for test with id 2
 questions = Question.create!([
   { body: 'The average lifespan during the middle ages was what?', test: tests[1] },
-  { body: 'What was created to limit the king\'s power in England', test: tests[1] },
+  { body: 'What was created to limit the king\'s power in England?', test: tests[1] },
   { body: 'Which international event was started by Pope Urban II\'s sermon at Clermont in 1095?', test: tests[1] },
   { body: 'What proportion of Europe\'s population is estimated to have been killed by the Black Death in the 14th century?', test: tests[1] }
 ])
