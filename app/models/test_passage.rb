@@ -22,6 +22,10 @@ class TestPassage < ApplicationRecord
     self.correct_questions * 100 / test.questions.size
   end
 
+  def remaining_questions
+    test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
   private
 
   def before_validation_set_first_question
@@ -38,6 +42,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_next_question
-    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    self.current_question = remaining_questions.first
   end
 end
