@@ -1,7 +1,7 @@
 <h3><%= @test.title%></h3>
 
 <table>
-<%= render @questions %>
+<%= render @test.questions %>
 </table>
 <p>
   <%= link_to 'New question', new_test_question_path(@test) %>
