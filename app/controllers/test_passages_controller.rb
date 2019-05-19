@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
 
-  before_action :get_test, only: %i[show]
+  before_action :get_test_passage, only: %i[show result update]
 
   def show
   end
@@ -13,8 +13,8 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def get_test
-    @test = TestPassage.find(params[:id]).test
+  def get_test_passage
+    @test_passage = TestPassage.find(params[:id])
   end
 
 end
