@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :test_passages, only: %i[show update]
+  resources :test_passages, only: %i[show update] do
     member do
       get :result
     end
+  end
 end
