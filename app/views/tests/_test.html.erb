@@ -9,6 +9,9 @@
     <center><%= test.questions.count %></center>
   </td>
   <td>
+    <%= button_to 'Start!', start_test_path(test) %>
+  </td>
+  <td>
     <%= link_to 'Show', test_path(test) %>
   </td>
   <td>
