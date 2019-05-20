@@ -1,7 +1,7 @@
 <h3>
   The <%= @test_passage.test.title %> test (level <%= @test_passage.test.level %>) was completed!
 </h3>
-<% if @test_passage.correct_answers_percentage >= 85 %>
+<% if @test_passage.successed? %>
   <p style="color: green">
     <%= @test_passage.correct_answers_percentage %>% correct answers! You passed this test successfully!
   </p>
