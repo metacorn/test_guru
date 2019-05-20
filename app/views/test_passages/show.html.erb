@@ -2,7 +2,7 @@
   <%= @test_passage.test.title %> (level <%= @test_passage.test.level %>) test passing
 </h3>
 <p>
-  Question <%= @test_passage.test.questions.size - @test_passage.remaining_questions.count %>/<%= @test_passage.test.questions.size %>
+  Question <%= @test_passage.number_of_all %>
 </p>
 <b>
   <%= @test_passage.current_question.body %>

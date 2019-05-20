@@ -14,6 +14,10 @@ class TestPassage < ApplicationRecord
     correct_answers_percentage > 85
   end
 
+  def number_of_all
+    "#{test.questions.size - remaining_questions.count}/#{test.questions.size}"
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
