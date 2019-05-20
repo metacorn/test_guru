@@ -1,0 +1,22 @@
+<%= form_with model: [@question, @answer], local: true do |form| %>
+
+<p>
+  <%# <%= form.label :body %>
+  <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
+</p>
+<p>
+  <table>
+    <tr>
+      <td>
+        <%= form.check_box :correct, id: :answer_correct %>
+      </td>
+      <td>
+        <%= form.label :correct %>
+      </td>
+    </tr>
+  </table>
+</p>
+<p>
+  <%= form.submit %><br>
+</p>
+<% end %>

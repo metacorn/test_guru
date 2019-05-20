@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
-  before_action :get_test, only: %i[show]
-  before_action :get_questions, only: %i[show]
+  before_action :get_test, only: %i[show update destroy start]
+  before_action :get_user, only: %i[start]
 
   def index
     @tests = Test.all
@@ -22,6 +22,24 @@ class TestsController < ApplicationController
     end
   end
 
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @test.destroy
+    redirect_to tests_path
+  end
+
+  def start
+    @user.tests.push(@test)
+    redirect_to @user.test_passage(@test)
+  end
+
   private
 
   def get_test
@@ -30,6 +48,10 @@ class TestsController < ApplicationController
 
   def get_questions
     @questions = @test.questions
+  end
+
+  def get_user
+    @user = User.first
   end
 
   def test_params

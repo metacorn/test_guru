@@ -1,0 +1,14 @@
+<h3>
+  The <%= @test_passage.test.title %> test (level <%= @test_passage.test.level %>) was completed!
+</h3>
+<% if @test_passage.successed? %>
+  <p style="color: green">
+    <%= @test_passage.correct_answers_percentage %>% correct answers! You passed this test successfully!
+  </p>
+<% else %>
+  <p style="color: red">
+    <%= @test_passage.correct_answers_percentage %>% correct answers! You didn't pass this test! Try one more time!
+  </p>
+<% end %>
+<br>
+<%= link_to 'Back to Tests', tests_path %>
