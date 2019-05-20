@@ -15,7 +15,7 @@ class TestPassage < ApplicationRecord
   end
 
   def number_of_all
-    "#{test.questions.size - remaining_questions.count}/#{test.questions.size}"
+    test.questions.size - remaining_questions.count
   end
 
   def accept!(answer_ids)
