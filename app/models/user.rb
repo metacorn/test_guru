@@ -29,6 +29,7 @@ class User < ApplicationRecord
     elsif password_string.present?
       @password = password_string
       self.password_digest = digest(password_string)
+    end
   end
 
   private
