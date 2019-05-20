@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
 
   validates :email, presence: true
+  validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
+  validates :password, confirmation: true
 
   def tests_by_level(level)
     tests.by_level(level)
