@@ -10,15 +10,8 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class='nav user'>Welcome, <b><%= current_user.email %></b> Guru! | 
-        <%= link_to 'Exit',
-                  session_path(session),
-                  method: :delete,
-                  data: { confirm: 'Are you sure?'} %>
-      </p>      
-    <% end %>
-    
+    <%= render 'shared/navigation' %>
+        
     <%= yield %>
 
     <%= render 'shared/footer' %>
