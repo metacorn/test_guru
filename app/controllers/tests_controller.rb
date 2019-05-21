@@ -53,7 +53,7 @@ class TestsController < ApplicationController
   end
 
   def get_user
-    @user = User.first
+    @user = current_user
   end
 
   def test_params
