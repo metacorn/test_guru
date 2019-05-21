@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user,
                 :logged_in?
 
+  def errors_listing(object)
+    message = object.errors.full_messages.map { |m| "#{m}." }
+    message.join(" ")
+  end
+
   private
 
   def authenticate_user!
