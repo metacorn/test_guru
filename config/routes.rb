@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   resources :sessions, only: :create
-  get :login, 'sessions#new'
+  get :login, to: 'sessions#new'
 
   resources :users, only: :create
   get :signup, to: 'users#new'
