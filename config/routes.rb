@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root to: 'tests#index'
 
-  resources :sessions, only: :create
+  resources :sessions, only: %i[create destroy]
   get :login, to: 'sessions#new'
 
   resources :users, only: :create
