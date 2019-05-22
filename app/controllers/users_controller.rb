@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tests_path
     else
-      flash[:alert] = errors_listing(@user)
+      flash.now[:alert] = errors_listing(@user)
       render :new
     end
   end  

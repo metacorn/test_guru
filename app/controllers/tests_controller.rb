@@ -2,7 +2,6 @@ class TestsController < ApplicationController
 
   before_action :authenticate_user!, except: :index
   before_action :get_test, only: %i[show update destroy start]
-  before_action :get_user, only: %i[start]
 
   def index
     @tests = Test.all
@@ -38,8 +37,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
@@ -50,10 +49,6 @@ class TestsController < ApplicationController
 
   def get_questions
     @questions = @test.questions
-  end
-
-  def get_user
-    @user = current_user
   end
 
   def test_params
