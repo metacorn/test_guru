@@ -1,0 +1,14 @@
+<p class='nav user'>
+  <%= link_to 'Test Guru Project', root_path %> | 
+    <% if logged_in? %>
+      Welcome, <b><%= current_user.email %></b> Guru! | 
+        <%= link_to 'Exit',
+                  session_path(session),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?'} %>
+      
+    <% else %>
+      <%= link_to 'Sign up', signup_path %> | 
+      <%= link_to 'Log in', login_path %>
+    <% end %>
+</p>

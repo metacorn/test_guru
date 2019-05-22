@@ -8,10 +8,10 @@
 
 # Users seeding.
 users = User.create!([
-  { user_class: 1, username: 'administrator', password: 'no_figure_out', email: 'administrator@gmail.com' },
-  { user_class: 0, username: 'first_nurd', password: 'strong_pass', email: 'first_nurd@gmail.com' },
-  { user_class: 0, username: 'second_nurd', password: 'more_strong_pass', email: 'second_nurd@gmail.com' },
-  { user_class: 0, username: 'third_nurd', password: 'most_strong_pass', email: 'third_nurd@gmail.com' }
+  { password: '123', email: 'administrator@gmail.com' },
+  { password: '456', email: 'first_nurd@gmail.com' },
+  { password: '789', email: 'second_nurd@gmail.com' },
+  { password: '101', email: 'third_nurd@gmail.com' }
 ])
 # Creating all categories
 categories = Category.create!([
