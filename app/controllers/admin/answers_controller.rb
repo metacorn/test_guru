@@ -1,6 +1,5 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
   
-  before_action :authenticate_user!
   before_action :get_question, only: %i[new create]
   before_action :get_answer, only: %i[show edit update destroy]
 
@@ -18,7 +17,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect_to @answer, notice: 'Answer was successfully created.'
+      redirect_to [:admin, @answer], notice: 'Answer was successfully created.'
     else
       render :new
     end
@@ -26,7 +25,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer, notice: 'Answer was successfully updated.'
+      redirect_to [:admin, @answer], notice: 'Answer was successfully updated.'
     else
       render :edit
     end
@@ -34,7 +33,7 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    redirect_to answers_url, notice: 'Answer was successfully destroyed.'
+    redirect_to admin_answers_url, notice: 'Answer was successfully destroyed.'
   end
 
   private

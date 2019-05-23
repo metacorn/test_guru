@@ -1,0 +1,9 @@
+<table>
+<%= render @test.questions %>
+</table>
+<p>
+  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+</p>
+<p>
+  <%= link_to 'Back to tests', admin_tests_path %>
+</p>
