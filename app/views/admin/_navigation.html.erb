@@ -1,0 +1,12 @@
+<p class="nav nav-admin">
+  <span class="nav-admin title">
+    TestGuru Admin Panel
+  </span>
+  <span class="nav-admin user">
+    Welcome, <b><%= current_user.email %></b> Guru! | 
+      <%= link_to 'Exit',
+        destroy_user_session_path,
+        method: :delete,
+        data: { confirm: 'Are you sure?'} %>
+  </span>
+</p>

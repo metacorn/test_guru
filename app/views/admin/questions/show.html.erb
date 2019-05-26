@@ -1,0 +1,13 @@
+<h3>
+  Question of <%= @question.test.title %> (level <%= @question.test.level %>) test:
+</h3>
+<%= @question.body %>
+<h4>
+  Answers:
+</h4>
+<ol>
+  <%= render @question.answers %>
+</ol>
+<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+<br>
+<%= link_to 'Back to test', admin_test_path(@question.test) %>
