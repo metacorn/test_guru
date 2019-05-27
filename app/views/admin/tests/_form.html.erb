@@ -1,6 +1,3 @@
-<h3>
-  Create new test!
-</h3>
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <p>
     <%= form.label :title %>
@@ -8,11 +5,11 @@
   </p>
   <p>
     <%= form.label :level %>
-    <%= form.select :level, ['0', '1', '2'], :prompt => 'Select level' %>
+    <%= form.select :level, ['0', '1', '2'], prompt: t('.select_level') %>
   </p>
   <p>
     <%= form.label :category %>
-    <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title'), :prompt => 'Select category' %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title'), prompt: t('.select_category') %>
   </p>
   <p>
     <%= form.submit %>
