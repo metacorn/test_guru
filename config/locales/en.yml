@@ -4,6 +4,8 @@ en:
       test:
         create: "Create test"
         update: "Update test"
+    select:
+      prompt: "Select one"
     label:
       test:
         title: "Title"
@@ -39,9 +41,6 @@ en:
       new:
         header: "Create new test"
         back_to_tests: "Back to tests"
-      form:
-        select_level: "Select level"
-        select_category: "Select category"
       create:
         success: "Test was succesfully created!"
       update:

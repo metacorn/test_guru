@@ -6,7 +6,13 @@ ru:
     attributes:
       test:
         title: "Название"
+        category: "Категория"
 
     errors:
       messages:
         blank: "не может быть пустым."
+      models:
+        test:
+          attributes:
+            title:
+              must_be_uniq: "и уровень теста должны быть уникальны."   

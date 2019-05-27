@@ -4,6 +4,8 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+    select:
+      prompt: "Выбрать"
     label:
       test:
         title: "Название"
@@ -39,9 +41,6 @@ ru:
       new:
         header: "Создать новый тест"
         back_to_tests: "Назад к тестам"
-      form:
-        select_level: "Выберите уровень"
-        select_category: "Выберите категорию"
       create:
         success: "Тест был успешно создан!"
       update:
