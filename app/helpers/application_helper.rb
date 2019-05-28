@@ -1,4 +1,8 @@
 module ApplicationHelper
+
+  BOOTSTRAP_FLASH = { alert: 'alert alert-danger', notice: 'alert alert-primary' }
+  DEFAULT_BOOTSTRAP_FLASH = 'alert alert-primary'
+
   def actual_year
     Time.current.year
   end
@@ -9,13 +13,6 @@ module ApplicationHelper
   end
 
   def flash_class(key)
-    case key
-    when :alert
-      "alert alert-danger"
-    when :notice
-      "alert alert-success"
-    else
-      "alert alert-primary"
-    end
+    BOOTSTRAP_FLASH[key] || DEFAULT_BOOTSTRAP_FLASH
   end
 end
