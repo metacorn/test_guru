@@ -1,12 +1,19 @@
-<p class="nav nav-admin">
-  <span class="nav-admin title">
-    TestGuru Admin Panel
+<nav class="navbar navbar-dark bg-dark align-middle">
+  <%= link_to 'Test Guru Project', root_path, class: 'navbar-brand' %>
+  <span class="mt-0 mb-0 h4 text-light text-uppercase">
+    Admin Panel
   </span>
-  <span class="nav-admin user">
-    Welcome, <b><%= current_user.email %></b> Guru! | 
-      <%= link_to 'Exit',
-        destroy_user_session_path,
-        method: :delete,
-        data: { confirm: 'Are you sure?'} %>
+  <span class="navbar-text text-light">
+    <% if user_signed_in? %>
+      Welcome, <b><%= current_user.email %></b> Guru! | 
+        <%= link_to 'Exit',
+                  destroy_user_session_path,
+                  method: :delete,
+                  data: { confirm: 'Are you sure?'} %>
+      
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_path %> | 
+      <%= link_to 'Log in', new_user_session_path %>
+    <% end %>
   </span>
-</p>
+</nav>

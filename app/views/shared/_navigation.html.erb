@@ -1,14 +1,19 @@
-<p class='nav user'>
-  <%= link_to 'Test Guru Project', root_path %> | 
-    <% if user_signed_in? %>
-      Welcome, <b><%= current_user.email %></b> Guru! | 
-        <%= link_to 'Exit',
-                  destroy_user_session_path,
-                  method: :delete,
-                  data: { confirm: 'Are you sure?'} %>
-      
-    <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %> | 
-      <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
-</p>
+<nav class='navbar navbar-light bg-light'>
+  <%= link_to 'Test Guru Project', root_path, class: 'navbar-brand' %>
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        Welcome, <b><%= current_user.email %></b> Guru! | 
+          <% if current_user.admin? %>
+            <%= link_to 'Admin Panel', admin_tests_path %> |
+          <% end %>
+          <%= link_to 'Exit',
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: { confirm: 'Are you sure?'} %>
+        
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %> | 
+        <%= link_to 'Log in', new_user_session_path %>
+      <% end %>
+    </span>
+</nav>
