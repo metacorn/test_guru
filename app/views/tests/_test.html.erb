@@ -1,14 +1,14 @@
 <tr>
-  <td>
+  <td class="pl-2 align-middle">
     <%= test.title %>
   </td>
-  <td>
-    <center><%= test.level %></center>
+  <td class="text-center align-middle">
+    <%= test.level %>
   </td>
-  <td>
-    <center><%= test.questions.count %></center>
+  <td class="text-center align-middle">
+    <%= test.questions.count %>
   </td>
-  <td>
-    <center><%= button_to t('.start'), start_test_path(test), :method => :post %></center>
+  <td class="text-center align-middle">
+    <%= button_to t('.start'), start_test_path(test), :method => :post %>
   </td>
 </tr>
