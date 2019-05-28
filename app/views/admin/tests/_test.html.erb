@@ -1,20 +1,20 @@
 <tr>
-  <td>
+  <td class="pl-2 align-middle">
     <%= test.title %>
   </td>
-  <td>
-    <center><%= test.level %></center>
+  <td class="text-center align-middle">
+    <%= test.level %>
   </td>
-  <td>
-    <center><%= test.questions.count %></center>
+  <td class="text-center align-middle">
+    <%= test.questions.count %>
   </td>
-  <td>
+  <td class="text-center align-middle">
     <%= link_to t('.show'), admin_test_path(test) %>
   </td>
-  <td>
+  <td class="text-center align-middle">
     <%= link_to t('.edit'), edit_admin_test_path(test) %>
   </td>
-  <td>
+  <td class="text-center align-middle">
     <%= link_to t('.delete'),
                   admin_test_path(test),
                   method: :delete,

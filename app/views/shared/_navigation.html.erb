@@ -3,6 +3,9 @@
     <span class="navbar-text">
       <% if user_signed_in? %>
         Welcome, <b><%= current_user.email %></b> Guru! | 
+          <% if current_user.admin? %>
+            <%= link_to 'Admin Panel', admin_tests_path %> |
+          <% end %>
           <%= link_to 'Exit',
                     destroy_user_session_path,
                     method: :delete,
