@@ -13,9 +13,10 @@
 
   <body>    
     <%= render 'shared/navigation' %>
-    <%= render 'shared/flash' if !flash.empty? %>
-    <%= yield %>
-
+    <div class="container">
+      <%= render 'shared/flash' if !flash.empty? %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
