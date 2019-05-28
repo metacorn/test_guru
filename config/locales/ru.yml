@@ -1,0 +1,54 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    select:
+      prompt: "Выбрать"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+  tests:
+    index:
+      header: "Список тестов"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Начать!"
+    start:
+      success: "Удачи!"
+  admin:
+    tests:
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirmation: "Вы уверены?"
+      index:
+        header: "Список тестов"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+      show:
+        new_question: "Новый вопрос"
+        back_to_tests: "Назад к тестам"
+      new:
+        header: "Создать новый тест"
+        back_to_tests: "Назад к тестам"
+      create:
+        success: "Тест был успешно создан!"
+      update:
+        success: "Тест был успешно обновлён!"
+      destroy:
+        success: "Тест был успешно удалён!"
+      start:
+        success: "Удачи!"
+  registrations:
+    create:
+      welcome: "Добро пожаловать, %{first_name} %{last_name}!"

@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create    
     super
-    flash[:notice] = "Hi, #{current_user.first_name} #{current_user.last_name}!" if current_user
+    flash[:notice] = t('.welcome', first_name: current_user.first_name, last_name: current_user.last_name) if current_user
   end
 
   private
