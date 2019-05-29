@@ -1,12 +1,17 @@
 <h3>
   <%= @test_passage.test.title %> (level <%= @test_passage.test.level %>) test passing
 </h3>
+
 <p>
   Question <%= @test_passage.number_of_all %>/<%= @test_passage.test.questions.size %>
 </p>
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
+
+<p>
+  <b>
+    <%= @test_passage.current_question.body %>
+  </b>
+</p>
+
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
@@ -22,5 +27,12 @@
       </table>
     </p>
   <% end %>
-  <%= form.submit 'Next' %>
+
+  <p>
+    <%= link_to 'Gist question', gist_test_passage_path(@test_passage), method: :post %>
+  </p>
+
+  <p>
+    <%= form.submit 'Next' %>      
+  </p>
 <% end %>

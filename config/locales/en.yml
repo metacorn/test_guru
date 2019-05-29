@@ -11,6 +11,7 @@ en:
         title: "Title"
         level: "Level"
         category: "Category"
+  
   tests:
     index:
       header: "Tests lists"
@@ -22,6 +23,12 @@ en:
       start: "Start!"
     start:
       success: "Good luck!"
+  
+  test_passages:
+    gist:
+      success: "Gist was saved succesfully."
+      failure: "An error occured while saving Gist."
+  
   admin:
     tests:
       test:
@@ -49,6 +56,7 @@ en:
         success: "Test was succesfully deleted!"
       start:
         success: "Good luck!"
+  
   registrations:
     create:
       welcome: "Welcome, %{last_name} %{first_name}!"

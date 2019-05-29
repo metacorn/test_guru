@@ -11,6 +11,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+
   tests:
     index:
       header: "Список тестов"
@@ -22,6 +23,12 @@ ru:
       start: "Начать!"
     start:
       success: "Удачи!"
+
+  test_passages:
+    gist:
+      success: "Gist был успешно сохранён."
+      failure: "Во время сохранения Gist произошла ошибка."
+
   admin:
     tests:
       test:
@@ -49,6 +56,7 @@ ru:
         success: "Тест был успешно удалён!"
       start:
         success: "Удачи!"
+
   registrations:
     create:
       welcome: "Добро пожаловать, %{first_name} %{last_name}!"
