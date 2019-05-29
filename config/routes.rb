@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    get 'gists/index'
+  end
   root to: 'tests#index'
 
   devise_for :users,  path: :gurus,
