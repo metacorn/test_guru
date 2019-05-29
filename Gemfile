@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'rails-i18n', '~> 5.1'
 
 # For filling Questions & Answers
-gem 'faker', '~> 1.9.1'
+# gem 'faker', '~> 1.9.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -48,6 +48,9 @@ gem 'devise', '~> 4.0'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+
+# Networking
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
