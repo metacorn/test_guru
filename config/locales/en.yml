@@ -60,3 +60,7 @@ en:
   registrations:
     create:
       welcome: "Welcome, %{last_name} %{first_name}!"
+
+  services:
+    gist_question_service:
+      description: "A question about %{title} from TestGuru"
