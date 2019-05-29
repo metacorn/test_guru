@@ -11,9 +11,9 @@
 
   <body>    
     <%= render 'admin/navigation' %>
+    <%= render 'admin/links' %>
     <%= render 'shared/flash' if !flash.empty? %>
-    <%= yield %>
-
+    <%= yield %>    
     <%= render 'shared/footer' %>
   </body>
 </html>
