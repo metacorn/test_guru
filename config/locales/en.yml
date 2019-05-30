@@ -37,7 +37,7 @@ en:
         delete: "Delete"
         confirmation: "Are you sure?"
       index:
-        header: "Tests lists"
+        header: "Tests list"
         title: "Title"
         level: "Level"
         questions: "Questions"
