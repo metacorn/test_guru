@@ -14,7 +14,7 @@ en:
   
   tests:
     index:
-      header: "Tests lists"
+      header: "Tests list"
       title: "Title"
       level: "Level"
       questions: "Questions"
