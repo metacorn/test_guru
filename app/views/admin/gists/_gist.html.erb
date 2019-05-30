@@ -1,0 +1,11 @@
+<tr>
+  <td class="pl-2 align-middle">
+    <%= link_to "#{gist.question.body[0..24]}...", admin_question_path(gist.question) %>
+  </td>
+  <td class="text-center align-middle">
+    <%= gist.user.email %>
+  </td>
+  <td class="align-middle">
+    <%= link_to gist.url, gist.url, target: "_blank" %>
+  </td> 
+</tr>

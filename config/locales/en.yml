@@ -11,6 +11,7 @@ en:
         title: "Title"
         level: "Level"
         category: "Category"
+  
   tests:
     index:
       header: "Tests lists"
@@ -22,6 +23,12 @@ en:
       start: "Start!"
     start:
       success: "Good luck!"
+  
+  test_passages:
+    gist:
+      success: "<a href='%{gist_html_url}' target='_blank'>Gist</a> was successfully created!"
+      failure: "An error occured while saving Gist."
+  
   admin:
     tests:
       test:
@@ -49,6 +56,11 @@ en:
         success: "Test was succesfully deleted!"
       start:
         success: "Good luck!"
+  
   registrations:
     create:
       welcome: "Welcome, %{last_name} %{first_name}!"
+
+  services:
+    gist_question_service:
+      description: "A question about %{title} from TestGuru"
