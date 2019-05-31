@@ -64,3 +64,11 @@ ru:
   services:
     gist_question_service:
       description: "Вопрос из теста %{title} от ТестГуру."
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки!"
+        many: "Обнаружено %{count} ошибок!"
+        one: "Обнаружена %{count} ошибка!"
+        other: "Обнаружено %{count} ошибки!"
