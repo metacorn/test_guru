@@ -1,9 +1,9 @@
 class Admin::TestsController < Admin::BaseController
 
-   before_action :get_test, only: %i[show update destroy start]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[show update update_inline destroy start]
 
   def index
-    @tests = Test.all
   end
 
   def show
@@ -31,6 +31,14 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: t('.success')
@@ -43,13 +51,17 @@ class Admin::TestsController < Admin::BaseController
 
   private
 
-  def get_test
+  def set_test
     @test = Test.find(params[:id])
   end
 
-  def get_questions
-    @questions = @test.questions
+  def set_tests
+    @tests = Test.all
   end
+
+  # def get_questions
+  #   @questions = @test.questions
+  # end
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)

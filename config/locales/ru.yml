@@ -56,6 +56,8 @@ ru:
         success: "Тест был успешно удалён!"
       start:
         success: "Удачи!"
+      form_inline:
+        submit: "OK"
 
   registrations:
     create:
