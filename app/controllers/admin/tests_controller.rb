@@ -62,10 +62,6 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
 
-  # def get_questions
-  #   @questions = @test.questions
-  # end
-
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
   end
