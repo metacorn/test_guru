@@ -56,6 +56,10 @@ ru:
         success: "Тест был успешно удалён!"
       start:
         success: "Удачи!"
+      form_inline:
+        submit: "OK"
+      edit:
+        header: "Редактирование теста %{title}"
 
   registrations:
     create:
@@ -64,3 +68,11 @@ ru:
   services:
     gist_question_service:
       description: "Вопрос из теста %{title} от ТестГуру."
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки!"
+        many: "Обнаружено %{count} ошибок!"
+        one: "Обнаружена %{count} ошибка!"
+        other: "Обнаружено %{count} ошибки!"

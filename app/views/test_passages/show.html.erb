@@ -3,8 +3,16 @@
 </h3>
 
 <p>
-  Question <%= @test_passage.number_of_all %>/<%= @test_passage.test.questions.size %>
+  Question <%= @test_passage.number_of_all %>/<%= @test_passage.total_questions %>
 </p>
+
+<%= content_tag :progress,  value: 0,
+                            max: 100,
+                            data: {
+                              current: @test_passage.number_of_all,
+                              total:  @test_passage.total_questions
+                            } do %>
+<% end  %>
 
 <p>
   <b>
