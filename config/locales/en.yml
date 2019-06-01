@@ -58,6 +58,8 @@ en:
         success: "Good luck!"
       form_inline:
         submit: "OK"
+      edit:
+        header: "Editng %{title} test"
   
   registrations:
     create:

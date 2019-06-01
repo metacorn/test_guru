@@ -58,6 +58,8 @@ ru:
         success: "Удачи!"
       form_inline:
         submit: "OK"
+      edit:
+        header: "Редактирование теста %{title}"
 
   registrations:
     create:
