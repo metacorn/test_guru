@@ -1,7 +1,7 @@
 <tr>
   <td class="pl-2 align-middle">
     <%= test.title %>
-    <%= render 'form_inline', test: test %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td class="text-center align-middle">
     <%= test.level %>
