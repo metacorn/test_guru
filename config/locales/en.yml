@@ -46,6 +46,7 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+        create_test: "Create new test"
       show:
         new_question: "New question"
         back_to_tests: "Back to tests"
