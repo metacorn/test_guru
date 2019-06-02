@@ -4,8 +4,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
-         :trackable
-         :validatable
+         :trackable,
+         :validatable,
          :confirmable
 
   has_many :created_tests, class_name: 'Test'
