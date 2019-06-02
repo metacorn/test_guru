@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-
+  
   root to: 'tests#index'
+  get '/feedback', to: 'feedback#index'
 
   devise_for :users,  path: :gurus,
                       path_names: { sign_in: :login, sign_out: :logout }
-                      # controllers: {registrations:"registrations"}
 
   resources :tests, only: :index do
     post :start, on: :member
