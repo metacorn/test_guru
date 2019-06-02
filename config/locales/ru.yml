@@ -11,6 +11,10 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+      feedbacks:
+        name: "Ваше имя"
+        email: "Ваша почта"
+        message: "Сообщение"
 
   tests:
     index:
@@ -76,3 +80,12 @@ ru:
         many: "Обнаружено %{count} ошибок!"
         one: "Обнаружена %{count} ошибка!"
         other: "Обнаружено %{count} ошибки!"
+
+  feedbacks:
+    new:
+      header: "Оставьте отзыв"
+    create:
+      success: "Отзыв отправлен!"
+      failure: "Во время отправки отзыва произошла ошибка."
+    contact_form:      
+      leave: "Отправить"

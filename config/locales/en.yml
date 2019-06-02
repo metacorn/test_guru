@@ -11,6 +11,10 @@ en:
         title: "Title"
         level: "Level"
         category: "Category"
+      feedbacks:
+        name: "Your name"
+        email: "Your e-mail"
+        message: "Message"
   
   tests:
     index:
@@ -74,3 +78,12 @@ en:
       header:
         one: "%{count} error detected!"
         other: "%{count} errors detected!"
+
+  feedbacks:
+    new:
+      header: "Leave feedback"
+    create:
+      success: "Feedback was sent!"
+      failure: "An error occured while leaving feedback."
+    contact_form:      
+      leave: "Send"
