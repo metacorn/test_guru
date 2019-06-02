@@ -1,13 +1,20 @@
-<h3>
-  Question of <%= @question.test.title %> (level <%= @question.test.level %>) test:
-</h3>
-<%= @question.body %>
-<h4>
-  Answers:
-</h4>
-<ol>
-  <%= render @question.answers %>
-</ol>
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
-<br>
-<%= link_to 'Back to test', admin_test_path(@question.test) %>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-3">
+    <h5>
+      Question of <%= @question.test.title %> (level <%= @question.test.level %>) test:
+    </h5>
+    <p class="mb-1">
+      <b>
+        <%= @question.body %>
+      </b>
+    </p>
+    <p class="mb-1">
+      Answers:
+    </p>
+    <ol class="pl-3 mt-1 mb-1">
+      <%= render @question.answers %>
+    </ol>
+    <%= link_to 'New answer', new_admin_question_answer_path(@question) %><br>
+    <%= link_to 'Back to test', admin_test_path(@question.test) %>
+  </div>
+</div>

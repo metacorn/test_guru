@@ -1,10 +1,11 @@
-<%= question_header(@question) %>
+<h5>
+  <%= question_header(@question) %>
+</h5>
 <%= form_with model: [:admin, @test, @question], local: true do |form| %>
-  <p>
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+  <p class="mb-2">
+    <%= form.text_field :body, size: "32" %>
   </p>
-  <p>
+  <p class="mb-2">
     <%= form.submit %>
   </p>
 <% end %>
