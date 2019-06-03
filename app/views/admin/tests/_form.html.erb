@@ -1,18 +1,18 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <p class="mb-1">
+    <%= form.label :title, class: "mb-0" %><br>
+    <%= form.text_field :title, size: "24" %>
   </p>
-  <p>
-    <%= form.label :level %>
+  <p class="mb-1">
+    <%= form.label :level, class: "mb-0" %><br>
     <%= form.select :level, ['0', '1', '2'], prompt: t('.select_level') %>
   </p>
-  <p>
-    <%= form.label :category %>
+  <p class="mb-3">
+    <%= form.label :category, class: "mb-0" %><br>
     <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title'), prompt: true %>
   </p>
-  <p>
+  <p class="mb-2">
     <%= form.submit %>
   </p>
 <% end %>

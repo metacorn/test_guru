@@ -26,6 +26,7 @@ ru:
     index:
       header: "Список тестов"
       title: "Название"
+      category: "Категория"
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
@@ -49,6 +50,7 @@ ru:
       index:
         header: "Список тестов"
         title: "Название"
+        category: "Категория"
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"

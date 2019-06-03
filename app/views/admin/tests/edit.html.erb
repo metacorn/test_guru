@@ -1,5 +1,9 @@
-<h3>
-  <%= t('.header', title: @test.title) %>
-</h3>
-<%= render 'form' %>
-<%= link_to t('.back_to_tests'), admin_tests_path %>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-3">
+    <h5>
+      <%= t('.header') %>
+    </h5>
+    <%= render 'form' %>
+    <%= link_to t('.back_to_tests'), admin_tests_path %>
+  </div>
+</div>

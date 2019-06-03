@@ -26,6 +26,7 @@ en:
     index:
       header: "Tests list"
       title: "Title"
+      category: "Category"
       level: "Level"
       questions: "Questions"
       actions: "Actions"
@@ -49,6 +50,7 @@ en:
       index:
         header: "Tests list"
         title: "Title"
+        category: "Category"
         level: "Level"
         questions: "Questions"
         actions: "Actions"
