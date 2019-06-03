@@ -2,8 +2,14 @@ en:
   helpers:
     submit:
       test:
-        create: "Create test"
-        update: "Update test"
+        create: "Create a test"
+        update: "Update a test"
+      question:
+        create: "Create a question"
+        update: "Update a question"
+      answer:
+        create: "Create a answer"
+        update: "Update an answer"
     select:
       prompt: "Select one"
     label:
@@ -65,6 +71,13 @@ en:
         submit: "OK"
       edit:
         header: "Editng %{title} test"
+    answers:
+      new:
+        header: "Creating an answer"
+        back_to_answers: "Back to answers"
+      edit:
+        header: "Editing an answer"
+        back_to_answers: "Back to answers"
   
   registrations:
     create:

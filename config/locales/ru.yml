@@ -4,6 +4,12 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
     select:
       prompt: "Выбрать"
     label:
@@ -65,6 +71,13 @@ ru:
         submit: "OK"
       edit:
         header: "Редактирование теста %{title}"
+    answers:
+      new:
+        header: "Создание ответа"
+        back_to_answers: "Назад к ответам"
+      edit:
+        header: "Редактирование ответа"
+        back_to_answers: "Назад к ответам"
 
   registrations:
     create:
