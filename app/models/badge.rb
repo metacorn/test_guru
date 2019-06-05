@@ -4,7 +4,7 @@ class Badge < ApplicationRecord
 
   enum rule_type: { overall: 3, all_by_level: 2, all_by_category: 1, by_the_first_time: 0 }
 
-  validates :name, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true
   validates :image, presence: true, uniqueness: true
   validates :rule_type, presence: true, inclusion: { in: rule_types.keys }
   validate :valid_rule_value
