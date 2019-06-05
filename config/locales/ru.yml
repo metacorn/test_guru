@@ -80,6 +80,12 @@ ru:
       edit:
         header: "Редактирование ответа"
         back_to_answers: "Назад к ответам"
+    gists:
+      index:
+        header: "Список гистов"
+        question: "Вопрос"
+        user: "Пользователь"
+        url: "Ссылка"
 
   registrations:
     create:
