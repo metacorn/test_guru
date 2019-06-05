@@ -1,11 +1,14 @@
 class Badge < ApplicationRecord
+  enum image: { star: 0, thumbsup: 1, heart: 2 }
+  enum color: { green: 0, blue: 1, orange: 2 }
+  enum rule_type: { by_the_first_time: 0, all_by_category: 1, all_by_level: 2, overall: 3 } 
+
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
 
-  enum rule_type: { overall: 3, all_by_level: 2, all_by_category: 1, by_the_first_time: 0 }
-
   validates :title, presence: true, uniqueness: true
-  validates :image, presence: true, uniqueness: true
+  validates :image, presence: true, inclusion: { in: images.keys }
+  validates :color, presence: true, inclusion: { in: colors.keys }
   validates :rule_type, presence: true, inclusion: { in: rule_types.keys }
   validate :valid_rule_value
 
