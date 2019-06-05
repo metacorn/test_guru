@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    get 'badges/index'
+    get 'badges/show'
+    get 'badges/new'
+    get 'badges/create'
+    get 'badges/destroy'
+  end
   root to: 'tests#index'
   get '/feedback', to: 'feedbacks#new'
   post '/feedback', to: 'feedbacks#create'
