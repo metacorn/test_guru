@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_06_05_154415) do
     t.string "name", null: false
     t.string "image", null: false
     t.integer "rule_type", null: false
-    t.string "rule_value", null: false
+    t.string "rule_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
