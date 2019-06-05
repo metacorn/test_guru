@@ -1,4 +1,31 @@
 <%= form_with model: [:admin, @badge], local: true do |form| %>
   <%= render 'shared/errors', resource: @badge %>
-  
+  <p class="mb-1">
+    <%= form.label :title, class: "mb-0" %><br>
+    <%= form.text_field :title, size: "24" %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :image, class: "mb-0" %><br>
+    <%= form.select :image, Badge.images.keys.map { |w| [w.humanize, w] } %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :color, class: "mb-0" %><br>
+    <%= form.select :color, Badge.colors.keys.map { |w| [w.humanize, w] } %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :rule_type, class: "mb-0" %><br>
+    <%= form.select :rule_type, Badge.rule_types.keys.map { |w| [w.humanize, w] } %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :test, class: "mb-0" %><br>
+    <%= form.select :test, Test.pluck(:title).sort %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :category, class: "mb-0" %><br>
+    <%= form.select :category, Category.distinct.pluck(:title).sort %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :level, class: "mb-0" %><br>
+    <%= form.select :level, Test.distinct.pluck(:level).sort %>
+  </p>
 <% end %>
