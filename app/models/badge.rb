@@ -1,7 +1,7 @@
 class Badge < ApplicationRecord
   enum image: { star: 0, thumbsup: 1, heart: 2 }
   enum color: { green: 0, blue: 1, red: 2 }
-  enum rule_type: { by_the_first_time: 0, all_by_category: 1, all_by_level: 2, overall: 3 } 
+  enum rule_type: { on_the_first_try: 0, all_by_category: 1, all_by_level: 2, overall: 3 } 
 
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
@@ -13,7 +13,12 @@ class Badge < ApplicationRecord
   validate :valid_rule_value
 
   def valid_rule_value
-    if rule_type == "all_by_level"
+    if rule_type == "on_the_first_try"
+      tests = Test.all.map { |t| t.title + " (Level " + t.level.to_s + ")" }
+      if !rule_value.in?(tests)
+        errors.add(:test, "Invalid test title and level.")
+      end
+    elsif rule_type == "all_by_level"
       levels = Test.distinct.pluck(:level).map(&:to_s)
       if !rule_value.in?(levels)
         errors.add(:level, "Invalid level value.")
