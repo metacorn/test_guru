@@ -1,2 +1,9 @@
-<h1>Admin::Badges#new</h1>
-<p>Find me in app/views/admin/badges/new.html.erb</p>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-3">
+    <h5>
+      <%= t('.header') %>
+    </h5>
+    <%= render 'form' %>
+    <%= link_to t('.back_to_badges'), admin_badges_path %>
+  </div>
+</div>

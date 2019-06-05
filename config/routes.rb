@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
   
-  namespace :admin do
-    get 'badges/index'
-    get 'badges/show'
-    get 'badges/new'
-    get 'badges/create'
-    get 'badges/destroy'
-  end
   root to: 'tests#index'
   get '/feedback', to: 'feedbacks#new'
   post '/feedback', to: 'feedbacks#create'
@@ -33,5 +26,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges, only: %i[index show new create destroy]
   end
 end
