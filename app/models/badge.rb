@@ -1,6 +1,6 @@
 class Badge < ApplicationRecord
   enum image: { star: 0, thumbsup: 1, heart: 2 }
-  enum color: { green: 0, blue: 1, orange: 2 }
+  enum color: { green: 0, blue: 1, red: 2 }
   enum rule_type: { by_the_first_time: 0, all_by_category: 1, all_by_level: 2, overall: 3 } 
 
   has_many :user_badges, dependent: :destroy
