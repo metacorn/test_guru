@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :email, uniqueness: true
