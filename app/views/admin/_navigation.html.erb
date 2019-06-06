@@ -8,8 +8,9 @@
             Administrator Menu
           </button>
           <div class="dropdown-menu dropdown-menu-right admin-dropdown-menu pt-1 pb-1">
-            <%= link_to 'Gists', admin_gists_path, class: "dropdown-item", style: "text-align : center" %>
-            <%= link_to 'Badges', admin_gists_path, class: "dropdown-item", style: "text-align : center" %>
+            <%= link_to 'Tests', admin_tests_path, class: "dropdown-item", style: "text-align : center" %>
+            <%= link_to 'Badges', admin_badges_path, class: "dropdown-item", style: "text-align : center" %>
+            <%= link_to 'Gists', admin_gists_path, class: "dropdown-item", style: "text-align : center" %>            
             <%= link_to 'Exit',
                   destroy_user_session_path,
                   method: :delete,
