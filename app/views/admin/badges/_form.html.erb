@@ -6,27 +6,27 @@
   </p>
   <p class="mb-1">
     <%= form.label :image, class: "mb-0" %><br>
-    <%= form.select :image, Badge.images.keys.map { |w| [w.humanize, w] }, {}, { class: 'form-control' } %>
+    <%= form.select :image, Badge.images.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
   </p>
   <p class="mb-1">
     <%= form.label :color, class: "mb-0" %><br>
-    <%= form.select :color, Badge.colors.keys.map { |w| [w.humanize, w] }, {}, { class: 'form-control' } %>
+    <%= form.select :color, Badge.colors.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
   </p>
   <p class="mb-1">
     <%= form.label :rule_type, class: "mb-0" %><br>
-    <%= form.select :rule_type, Badge.rule_types.keys.map { |w| [w.humanize, w] }, {}, { class: 'form-control' } %>
+    <%= form.select :rule_type, Badge.rule_types.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
   </p>
-  <p class="mb-1">
-    <%= form.label :test, class: "mb-0" %><br>
-    <%= form.select :rule_value, Test.all.map { |t| t.title + " (Level " + t.level.to_s + ")" }, {}, { class: 'form-control' } %>
+  <p class="mb-1" id = "test-rule-value">
+  <%= form.label "Test", class: "mb-0" %><br>
+  <%= form.select :rule_value, Test.all.map { |t| t.title + " (Level " + t.level.to_s + ")" }, {}, { class: "form-control test-rule-value" } %>
   </p>
-  <p class="mb-1 hide">
-    <%= form.label :category, class: "mb-0" %><br>
-    <%= form.select :rule_value, Category.distinct.pluck(:title).sort, {}, { class: 'form-control' } %>
+  <p class="mb-1 hide" id = "category-rule-value">
+    <%= form.label "Category", class: "mb-0" %><br>
+    <%= form.select :not_actual_rule_value, Category.distinct.pluck(:title).sort, {}, { class: "form-control category-rule-value" } %>
   </p>
-  <p class="mb-1 hide">
-    <%= form.label :level, class: "mb-0" %><br>
-    <%= form.select :rule_value, Test.distinct.pluck(:level).sort, {}, { class: 'form-control' } %>
+  <p class="mb-1 hide" id = "level-rule-value">
+    <%= form.label "Level", class: "mb-0" %><br>
+    <%= form.select :not_actual_rule_value, Test.distinct.pluck(:level).sort, {}, { class: "form-control level-rule-value" } %>
   </p>
   <p class="mb-2 mt-3">
     <%= form.submit %>
