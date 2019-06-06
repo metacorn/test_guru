@@ -1,2 +1,28 @@
-<h1>Admin::Badges#index</h1>
-<p>Find me in app/views/admin/badges/index.html.erb</p>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-6">
+    <h4>
+      <%= t('.header') %>      
+    </h4>
+    <%= render 'shared/errors', resource: @test %>
+    <table class="table table-striped table-sm table-borderless">
+      <thead class="thead-dark">
+        <th scope="col" class="pl-2">
+          <%= t('.title') %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t('.image') %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t('.rule') %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t('.actions') %>
+        </th>
+      </thead>
+      <tbody class="table-hover">
+        <%= render @badges %>
+      </tbody>
+    </table>
+    <%= link_to t('.create_badge'), new_admin_badge_path %>
+  </div>
+</div>

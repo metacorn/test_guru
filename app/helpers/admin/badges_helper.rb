@@ -1,2 +1,2 @@
-module Admin::BadgesHelper
+module Admin::BadgesHelper  
 end

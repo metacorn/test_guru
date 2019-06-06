@@ -1,0 +1,16 @@
+<tr>
+  <td class="pl-2 align-middle">
+    <%= badge.title %>
+  </td>
+  <td class="text-center align-middle">
+    <%= render inline: show_image(badge) %>
+  </td>
+  <td class="text-center align-middle">
+    <%= show_rule(badge) %>
+  </td>
+  <td class="text-center align-middle">
+    <%= link_to t('.delete'), admin_badge_path(badge),
+                              method: :delete,
+                              data: { confirm: t('.confirmation')} %>
+  </td>
+</tr>
