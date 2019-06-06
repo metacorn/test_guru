@@ -9,9 +9,11 @@ module BadgesHelper
   def show_rule(badge)
     case badge.rule_type
     when "on_the_first_try"
-      "Passing #{badge.rule_value} test on the first try"
+      test = Test.find(badge.rule_value)
+      "Passing '#{test.title}' (level #{test.level}) test on the first try"
     when "all_by_category"
-      "Passing all tests of #{badge.rule_value} category"
+      category = Category.find(badge.rule_value)
+      "Passing all tests of '#{category.title}' category"
     when "all_by_level"
       "Passing all tests of #{badge.rule_value} level"
     when "overall"

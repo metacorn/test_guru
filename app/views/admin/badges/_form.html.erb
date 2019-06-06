@@ -18,11 +18,11 @@
   </p>
   <p class="mb-1" id = "test-rule-value">
   <%= form.label "Test", class: "mb-0" %><br>
-  <%= form.select :rule_value, Test.all.map { |t| t.title + " (Level " + t.level.to_s + ")" }, {}, { class: "form-control test-rule-value" } %>
+  <%= form.select :rule_value, Test.all.map { |t| [t.title + " (Level " + t.level.to_s + ")", t.id] }, {}, { class: "form-control test-rule-value" } %>
   </p>
   <p class="mb-1 hide" id = "category-rule-value">
     <%= form.label "Category", class: "mb-0" %><br>
-    <%= form.select :not_actual_rule_value, Category.distinct.pluck(:title).sort, {}, { class: "form-control category-rule-value" } %>
+    <%= form.select :not_actual_rule_value, Category.all.sort_by(&:title).map { |c| [c.title, c.id] }, {}, { class: "form-control category-rule-value" } %>
   </p>
   <p class="mb-1 hide" id = "level-rule-value">
     <%= form.label "Level", class: "mb-0" %><br>

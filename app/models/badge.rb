@@ -14,9 +14,9 @@ class Badge < ApplicationRecord
 
   def valid_rule_value
     if rule_type == "on_the_first_try"
-      tests = Test.all.map { |t| t.title + " (Level " + t.level.to_s + ")" }
+      tests = Test.all.pluck(:id).map(&:to_s)
       if !rule_value.in?(tests)
-        errors.add(:test, "Invalid test title and level.")
+        errors.add(:test, "Invalid test id.")
       end
     elsif rule_type == "all_by_level"
       levels = Test.distinct.pluck(:level).map(&:to_s)
@@ -24,9 +24,9 @@ class Badge < ApplicationRecord
         errors.add(:level, "Invalid level value.")
       end
     elsif rule_type == "all_by_category"
-      categories = Category.distinct.pluck(:title)
+      categories = Category.all.pluck(:id).map(&:to_s)
       if !rule_value.in?(categories)
-        errors.add(:category, "Invalid category title.")
+        errors.add(:category, "Invalid category id.")
       end
     end
   end

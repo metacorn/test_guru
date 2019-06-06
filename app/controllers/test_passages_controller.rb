@@ -16,8 +16,8 @@ class TestPassagesController < ApplicationController
       if @test_passage.successed?
         @test_passage.successed = true
         @test_passage.save
-      end
-      BadgeCheckingService.new(@test_passage).call
+        BadgeCheckingService.new(@test_passage).call
+      end      
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
