@@ -21,6 +21,14 @@ en:
         name: "Your name"
         email: "Your e-mail"
         message: "Message"
+      badge:
+        title: "Title"
+        image: "Image"
+        color: "Color"
+        rule_type: "Rule type"
+        test: "Test"
+        category: "Category"
+        level: "Level"
   
   tests:
     index:
@@ -86,6 +94,19 @@ en:
         question: "Question"
         user: "User"
         url: "URL"
+    badges:
+      new:
+        header: "New badge"
+        back_to_badges: "Back to badges"
+      index:
+        header: "Badges list"
+        title: "Title"
+        image: "Image"
+        rule: "Rule"
+        actions: "Actions"
+        create_badge: "Create a badge"
+      badge:
+        delete: "Delete"
   
   registrations:
     create:
@@ -109,3 +130,9 @@ en:
       failure: "An error occured while leaving feedback."
     contact_form:      
       leave: "Send"
+  badges:
+    index:
+      header: "Badges list"
+      title: "Title"
+      image: "Image"
+      rule: "Rule"

@@ -20,4 +20,13 @@ module BadgesHelper
       "Passing all tests"
     end      
   end
+
+  def show_user_badges
+    html_erb_string = ""
+    badges = current_user.user_badges.pluck(:badge_id).map { |badge_id| Badge.find(badge_id) }
+    badges.each do |badge|
+      html_erb_string += show_image(badge) + "\n"
+    end
+    html_erb_string
+  end
 end

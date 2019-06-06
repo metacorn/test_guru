@@ -10,6 +10,8 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      badge:
+        create: "Создать бейдж"
     select:
       prompt: "Выбрать"
     label:
@@ -21,6 +23,14 @@ ru:
         name: "Ваше имя"
         email: "Ваша почта"
         message: "Сообщение"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        color: "Цвет"
+        rule_type: "Правило"
+        test: "Тест"
+        category: "Категория"
+        level: "Уровень"
 
   tests:
     index:
@@ -86,6 +96,19 @@ ru:
         question: "Вопрос"
         user: "Пользователь"
         url: "Ссылка"
+    badges:
+      new:
+        header: "Новый бейдж"
+        back_to_badges: "Назад к бейджам"
+      index:
+        header: "Список бейджев"
+        title: "Название"
+        image: "Изображение"
+        rule: "Правило"
+        actions: "Действия"
+        create_badge: "Создать бейдж"
+      badge:
+        delete: "Удалить"
 
   registrations:
     create:
@@ -111,3 +134,9 @@ ru:
       failure: "Во время отправки отзыва произошла ошибка."
     contact_form:      
       leave: "Отправить"
+  badges:
+    index:
+      header: "Список бейджев"
+      title: "Название"
+      image: "Изображение"
+      rule: "Правило"
