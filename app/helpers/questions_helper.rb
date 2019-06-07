@@ -3,7 +3,7 @@ module QuestionsHelper
     if question.new_record?
       "Create new #{@test.title} question:"
     else
-      "Edit #{question.test.title} Question:"
+      "Edit #{question.test.title} question:"
     end
   end
 end

@@ -8,10 +8,10 @@
 
 # Users seeding.
 users = User.create!([
-  { password: '123', email: 'administrator@gmail.com' },
-  { password: '456', email: 'first_nurd@gmail.com' },
-  { password: '789', email: 'second_nurd@gmail.com' },
-  { password: '101', email: 'third_nurd@gmail.com' }
+  { password: '123456', email: '1@1.com', first_name: "Odin", last_name: "Raz", type: "Admin" },
+  { password: '456789', email: '2@2.com' },
+  { password: '789012', email: '3@3.com' },
+  { password: '012345', email: '4@4.com' }
 ])
 # Creating all categories
 categories = Category.create!([
@@ -22,11 +22,11 @@ categories = Category.create!([
 # Creating all tests
 tests = Test.create!([
   { title: 'Kievan Rus', category: categories[0], author: users[1] },
-  { title: 'Middle Ages', category: categories[0], author: users[2], level: 1 },
-  { title: 'Oscar Award', category: categories[1], author: users[3], level: 2 },
+  { title: 'Middle Ages', category: categories[0], author: users[1], level: 1 },
+  { title: 'Oscar Award', category: categories[1], author: users[1], level: 2 },
   { title: 'International Cinema', category: categories[1], author: users[1], level: 2 },
-  { title: 'World Cup', category: categories[2], author: users[2] },
-  { title: 'Supporters', category: categories[2], author: users[3], level: 1 }
+  { title: 'World Cup', category: categories[2], author: users[1] },
+  { title: 'Supporters', category: categories[2], author: users[1], level: 1 }
 ])
 # Creating questions for test with id 1
 questions = Question.create!([
@@ -184,13 +184,3 @@ answers = Answer.create!([
   { body: 'Partizan', question: questions[3] },
   { body: 'Zenit', question: questions[3], correct: true }
 ])
-# Passing Tests seeding.
-# TestPassage.create(user_id: 2, test_id: 1, passed: true)
-# TestPassage.create(user_id: 2, test_id: 2)
-# TestPassage.create(user_id: 2, test_id: 3)
-# TestPassage.create(user_id: 3, test_id: 3, passed: true)
-# TestPassage.create(user_id: 3, test_id: 4)
-# TestPassage.create(user_id: 3, test_id: 5)
-# TestPassage.create(user_id: 4, test_id: 5, passed: true)
-# TestPassage.create(user_id: 4, test_id: 6)
-# TestPassage.create(user_id: 4, test_id: 1)

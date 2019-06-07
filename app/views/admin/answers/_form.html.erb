@@ -1,22 +1,18 @@
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-
-<p>
-  <%# <%= form.label :body %>
-  <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
+<p class="mb-0">
+  <%= form.text_area :body, id: :answer_body, rows: 4, cols: 32 %>
 </p>
-<p>
-  <table>
-    <tr>
-      <td>
-        <%= form.check_box :correct, id: :answer_correct %>
-      </td>
-      <td>
-        <%= form.label :correct %>
-      </td>
-    </tr>
-  </table>
-</p>
-<p>
+<table>
+  <tr class="align-middle">
+    <td>
+      <%= form.check_box :correct, id: :answer_correct %>
+    </td>
+    <td>
+      <%= form.label :correct, class: "mb-0 pl-2 pb-1"%>
+    </td>
+  </tr>
+</table>
+<p class="mb-1">
   <%= form.submit %><br>
 </p>
 <% end %>

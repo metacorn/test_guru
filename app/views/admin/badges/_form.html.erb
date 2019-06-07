@@ -1,0 +1,34 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <p class="mb-1">
+    <%= form.label :title, class: "mb-0" %><br>
+    <%= form.text_area :title, cols: 21, rows: 2 %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :image, class: "mb-0" %><br>
+    <%= form.select :image, Badge.images.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :color, class: "mb-0" %><br>
+    <%= form.select :color, Badge.colors.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :rule_type, class: "mb-0" %><br>
+    <%= form.select :rule_type, Badge.rule_types.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
+  </p>
+  <p class="mb-1" id = "test-rule-value">
+  <%= form.label :test, class: "mb-0" %><br>
+  <%= form.select :rule_value, Test.all.map { |t| [t.title + " (Level " + t.level.to_s + ")", t.id] }, {}, { class: "form-control test-rule-value" } %>
+  </p>
+  <p class="mb-1 hide" id = "category-rule-value">
+    <%= form.label :category, class: "mb-0" %><br>
+    <%= form.select :not_actual_rule_value, Category.all.sort_by(&:title).map { |c| [c.title, c.id] }, {}, { class: "form-control category-rule-value" } %>
+  </p>
+  <p class="mb-1 hide" id = "level-rule-value">
+    <%= form.label :level, class: "mb-0" %><br>
+    <%= form.select :not_actual_rule_value, Test.distinct.pluck(:level).sort, {}, { class: "form-control level-rule-value" } %>
+  </p>
+  <p class="mb-2 mt-3">
+    <%= form.submit %>
+  </p>
+<% end %>

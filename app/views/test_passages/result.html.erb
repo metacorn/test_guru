@@ -1,14 +1,20 @@
-<h3>
-  The <%= @test_passage.test.title %> test (level <%= @test_passage.test.level %>) was completed!
-</h3>
-<% if @test_passage.successed? %>
-  <p style="color: green">
-    <%= @test_passage.correct_answers_percentage %>% correct answers! You passed this test successfully!
-  </p>
-<% else %>
-  <p style="color: red">
-    <%= @test_passage.correct_answers_percentage %>% correct answers! You didn't pass this test! Try one more time!
-  </p>
-<% end %>
-<br>
-<%= link_to 'Back to Tests', tests_path %>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-6">
+    <h5>
+      <b>
+        The <%= @test_passage.test.title %> test (level <%= @test_passage.test.level %>) was completed!
+      </b>
+    </h5>
+    <% if @test_passage.successed? %>
+      <p style="color: green">
+        <%= @test_passage.correct_answers_percentage %>% correct answers! You passed this test successfully!
+      </p>
+    <% else %>
+      <p style="color: red">
+        <%= @test_passage.correct_answers_percentage %>% correct answers! You didn't pass this test! Try one more time!
+      </p>
+    <% end %>
+    <%= link_to 'Back to Tests', tests_path %>
+  </div>
+</div>
+

@@ -1,9 +1,12 @@
-<h3>Editing Answer</h3>
-
-<p>
-  <%= @answer.question.body %>
-</p>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<div class="mt-2 row justify-content-center">
+  <div class="col col-md-3">
+    <h5>
+      <%= t('.header') %>
+    </h5>
+    <p class="mb-1">
+      <%= @answer.question.body %>
+    </p>
+    <%= render 'form' %>
+    <%= link_to t('.back_to_answers'), admin_question_path(@answer.question) %>
+  </div>
+</div>
