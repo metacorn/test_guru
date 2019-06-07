@@ -49,6 +49,12 @@ ru:
     gist:
       success: "<a href='%{gist_html_url}' target='_blank'>Gist</a> был успешно сохранён."
       failure: "Во время сохранения Gist произошла ошибка."
+    update:
+      badges:
+        one: "Поздравляем! Вы заработали %{count} бейдж: %{badges_titles}!"
+        few: "Поздравляем! Вы заработали %{count} бейджа: %{badges_titles}!"
+        many: "Поздравляем! Вы заработали %{count} бейджей: %{badges_titles}!"       
+        other: "Поздравляем! Вы заработали %{count} бейджа: %{badges_titles}!"
 
   admin:
     tests:
@@ -109,6 +115,11 @@ ru:
         create_badge: "Создать бейдж"
       badge:
         delete: "Удалить"
+        confirmation: "Вы уверены?"
+      create:
+        success: "Бейдж был успешно создан!"
+      destroy:
+        success: "Бейдж был успешно удалён!"
 
   registrations:
     create:

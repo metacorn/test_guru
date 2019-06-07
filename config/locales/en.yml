@@ -10,6 +10,8 @@ en:
       answer:
         create: "Create a answer"
         update: "Update an answer"
+      badge:
+        create: "Create a badge"
     select:
       prompt: "Select one"
     label:
@@ -47,6 +49,10 @@ en:
     gist:
       success: "<a href='%{gist_html_url}' target='_blank'>Gist</a> was successfully created!"
       failure: "An error occured while saving Gist."
+    update:
+      badges:
+        one: "Congratulations! You gained %{count} badge: %{badges_titles}!"
+        other: "Congratulations! You gained %{count} badges: %{badges_titles}!"
   
   admin:
     tests:
@@ -107,6 +113,11 @@ en:
         create_badge: "Create a badge"
       badge:
         delete: "Delete"
+        confirmation: "Are you sure?"
+      create:
+        success: "Badge was succesfully created!"
+      destroy:
+        success: "Badge was succesfully deleted!"
   
   registrations:
     create:
@@ -114,7 +125,7 @@ en:
 
   services:
     gist_question_service:
-      description: "A question about %{title} from TestGuru"
+      description: "A question about %{title} from TestGuru"      
 
   shared:
     errors:

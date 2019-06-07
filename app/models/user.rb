@@ -30,12 +30,7 @@ class User < ApplicationRecord
     self.is_a?(Admin)
   end
 
-  def has_failure?(test)
+  def has_failed_passing?(test)
     TestPassage.where(user_id: self.id, test_id: test.id, successed: false).length > 0
   end
-
-  def has_badge?(badge)
-    badge.in?(self.badges)
-  end
-
 end

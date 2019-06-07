@@ -16,7 +16,16 @@ class TestPassagesController < ApplicationController
       if @test_passage.successed?
         @test_passage.successed = true
         @test_passage.save
-        BadgeCheckingService.new(@test_passage).call
+        rewarded_badges = BadgeCheckingService.new(@test_passage).call
+        if rewarded_badges.present?
+          rewarded_badges.each do |badge|
+            UserBadge.create(user_id: current_user.id,
+                             badge_id: badge.id,
+                             test_passage_id: @test_passage.id)
+          end
+          badges_titles = rewarded_badges.map(&:title).join(", ")
+          flash[:notice] = t('.badges', count: rewarded_badges.length, badges_titles: badges_titles)
+        end
       end      
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)

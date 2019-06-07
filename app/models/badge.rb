@@ -13,17 +13,18 @@ class Badge < ApplicationRecord
   validate :valid_rule_value
 
   def valid_rule_value
-    if rule_type == "on_the_first_try"
-      tests = Test.all.pluck(:id).map(&:to_s)
-      if !rule_value.in?(tests)
+    case rule_type
+    when "on_the_first_try"
+      tests = Test.all.pluck(:id)
+      if !rule_value.to_i.in?(tests)
         errors.add(:test, "Invalid test id.")
       end
-    elsif rule_type == "all_by_level"
+    when "all_by_level"
       levels = Test.distinct.pluck(:level).map(&:to_s)
       if !rule_value.in?(levels)
         errors.add(:level, "Invalid level value.")
       end
-    elsif rule_type == "all_by_category"
+    when "all_by_category"
       categories = Category.all.pluck(:id).map(&:to_s)
       if !rule_value.in?(categories)
         errors.add(:category, "Invalid category id.")
