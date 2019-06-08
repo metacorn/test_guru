@@ -19,6 +19,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+        time_limit: "Лимит (мин)"
       feedbacks:
         name: "Ваше имя"
         email: "Ваша почта"
@@ -40,6 +41,7 @@ ru:
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
+      time_limit: "Лимит (мин)"
     test:
       start: "Начать!"
     start:
@@ -71,6 +73,7 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         create_test: "Создать новый тест"
+        time_limit: "Лимит (мин)"
       show:
         new_question: "Новый вопрос"
         back_to_tests: "Назад к тестам"

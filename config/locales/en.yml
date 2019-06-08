@@ -19,6 +19,7 @@ en:
         title: "Title"
         level: "Level"
         category: "Category"
+        time_limit: "Limit (min)"
       feedbacks:
         name: "Your name"
         email: "Your e-mail"
@@ -40,6 +41,7 @@ en:
       level: "Level"
       questions: "Questions"
       actions: "Actions"
+      time_limit: "Limit (min)"
     test:
       start: "Start!"
     start:
@@ -69,6 +71,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         create_test: "Create new test"
+        time_limit: "Limit (min)"
       show:
         new_question: "New question"
         back_to_tests: "Back to tests"
@@ -86,7 +89,7 @@ en:
       form_inline:
         submit: "OK"
       edit:
-        header: "Editng %{title} test"
+        header: "Editing %{title} test"
     answers:
       new:
         header: "Creating an answer"

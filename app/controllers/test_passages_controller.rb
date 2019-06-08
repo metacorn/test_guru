@@ -16,18 +16,10 @@ class TestPassagesController < ApplicationController
       if @test_passage.successed?
         @test_passage.successed = true
         @test_passage.save
-        rewarded_badges = BadgeCheckingService.new(@test_passage).call
-        if rewarded_badges.present?
-          rewarded_badges.each do |badge|
-            UserBadge.create(user_id: current_user.id,
-                             badge_id: badge.id,
-                             test_passage_id: @test_passage.id)
-          end
-          badges_titles = rewarded_badges.map(&:title).join(", ")
-          flash[:notice] = t('.badges', count: rewarded_badges.length, badges_titles: badges_titles)
-        end
+        rewarding
+        TestsMailer.completed_test(@test_passage).deliver_now
       end      
-      TestsMailer.completed_test(@test_passage).deliver_now
+      @test_passage.save
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -46,6 +38,19 @@ class TestPassagesController < ApplicationController
     end
 
     redirect_to @test_passage, flash_options
+  end
+
+  def rewarding
+    rewarded_badges = BadgeCheckingService.new(@test_passage).call
+        if rewarded_badges.present?
+          rewarded_badges.each do |badge|
+            UserBadge.create(user_id: current_user.id,
+                             badge_id: badge.id,
+                             test_passage_id: @test_passage.id)
+          end
+          badges_titles = rewarded_badges.map(&:title).join(", ")
+          flash[:notice] = t('.badges', count: rewarded_badges.length, badges_titles: badges_titles)
+        end
   end
 
   private

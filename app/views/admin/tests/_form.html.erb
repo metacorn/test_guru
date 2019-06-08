@@ -8,9 +8,13 @@
     <%= form.label :level, class: "mb-0" %><br>
     <%= form.select :level, ['0', '1', '2'], prompt: t('.select_level') %>
   </p>
-  <p class="mb-3">
+  <p class="mb-1">
     <%= form.label :category, class: "mb-0" %><br>
     <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title'), prompt: true %>
+  </p>
+  <p class="mb-3">
+    <%= form.label :time_limit, class: "mb-0" %><br>
+    <%= form.text_field :time_limit, placeholder: "1...60", size: "6" %>
   </p>
   <p class="mb-2">
     <%= form.submit %>

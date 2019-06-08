@@ -16,7 +16,12 @@ class Test < ApplicationRecord
 
   validates :title, presence: true,
                     uniqueness: { scope: :level, message: '... values of title and level must be unique!' }
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0}
+  validates :level, numericality: { only_integer: true,
+                                    greater_than_or_equal_to: 0 }
+  validates :time_limit,  presence: true,
+                          numericality: { only_integer: true,
+                                          greater_than_or_equal_to: 1,
+                                          less_than_or_equal_to: 60 }
 
   def self.ordered_tests_titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
