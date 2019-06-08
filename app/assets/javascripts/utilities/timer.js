@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load', function() {
   if (timer) {
     remaining_time = parseInt(timer.getAttribute("data"), 10)
     console.log(remaining_time)
-    let updateTimer = setInterval(function () {  
+    var updateTimer = setInterval(function () {  
       minutes = Math.floor(remaining_time / 60)
       seconds = remaining_time - minutes * 60
       timer.textContent = minutes + " min " + seconds + " sec left!"
