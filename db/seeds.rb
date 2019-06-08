@@ -9,9 +9,8 @@
 # Users seeding.
 users = User.create!([
   { password: '123456', email: '1@1.com', first_name: "Odin", last_name: "Raz", type: "Admin" },
-  { password: '456789', email: '2@2.com' },
-  { password: '789012', email: '3@3.com' },
-  { password: '012345', email: '4@4.com' }
+  { password: '456789', email: '2@2.com' }
+
 ])
 # Creating all categories
 categories = Category.create!([
@@ -21,12 +20,12 @@ categories = Category.create!([
 ])
 # Creating all tests
 tests = Test.create!([
-  { title: 'Kievan Rus', category: categories[0], author: users[1] },
-  { title: 'Middle Ages', category: categories[0], author: users[1], level: 1 },
-  { title: 'Oscar Award', category: categories[1], author: users[1], level: 2 },
-  { title: 'International Cinema', category: categories[1], author: users[1], level: 2 },
-  { title: 'World Cup', category: categories[2], author: users[1] },
-  { title: 'Supporters', category: categories[2], author: users[1], level: 1 }
+  { title: 'Kievan Rus', category: categories[0], author: users[1], time_limit: 1 },
+  { title: 'Middle Ages', category: categories[0], author: users[1], level: 1, time_limit: 2 },
+  { title: 'Oscar Award', category: categories[1], author: users[1], level: 2, time_limit: 3 },
+  { title: 'International Cinema', category: categories[1], author: users[1], level: 2, time_limit: 3 },
+  { title: 'World Cup', category: categories[2], author: users[1], time_limit: 2 },
+  { title: 'Supporters', category: categories[2], author: users[1], level: 1, time_limit: 1 }
 ])
 # Creating questions for test with id 1
 questions = Question.create!([

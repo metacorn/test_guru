@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_current_question
 
   def completed?
-    current_question.nil?
+    current_question.nil? || expired?
   end
 
   def successed?
@@ -41,6 +41,14 @@ class TestPassage < ApplicationRecord
     end
   end
 
+  def expired?
+    Time.now - created_at > (test.time_limit * 60) 
+  end
+
+  def time_left
+    ((test.time_limit * 60) - (Time.now - created_at)).div(1)
+  end
+
   private
 
   def before_validation_set_current_question
@@ -54,5 +62,5 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
-  end
+  end  
 end
