@@ -1,10 +1,3 @@
-TestGuru
+# TestGuru
 
-Entities list:
-
-Category;
-Test;
-PassingTest;
-Question;
-Answer;
-User.
+**TestGuru** is a web application for creating and passing tests written in [Ruby on Rails](https://rubyonrails.org/) framework. 
