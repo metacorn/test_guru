@@ -43,7 +43,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Authentification
-gem 'devise', '~> 4.0'
+gem 'devise', '~> 4.7'
 
 # UI
 gem 'jquery-rails'
